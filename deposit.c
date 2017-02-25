@@ -1,7 +1,12 @@
 #include <stdio.h>
 
+enum {
+    date 365,
+    depos 10000
+}
+
 void check(int sum, int time, int *n){
-    if (time > 365 && sum < 10000){
+    if (time > date || sum < depos){
         *n = 0;
     }
     else{
@@ -9,7 +14,7 @@ void check(int sum, int time, int *n){
     }
 }
 
-enum Periods {
+enum Periods{
     lessone = 0,
     one = 30,
     lessfour = 31,
@@ -21,55 +26,56 @@ enum Periods {
 }
 
 int main(){
-    int sum, n, time, res;
-    
+    int sum, n, time;
+    float res;
+
     n = 0;
-    
+
     while (n == 0){
-    
-    printf("\nВведите сумму вклада:");
-    scanf("%d", &sum);
-    printf("Введите срок:");
-    scanf("%d", &time);
-    
-    check(sum, time, &n);}
-    
-    if(sum<100000){
-        if(time > lessone && time <= one){
-            res=(sum*0.1);
+        printf("\nВведите сумму вклада:");
+        scanf("%d", &sum);
+        printf("Введите срок:");
+        scanf("%d", &time);
+
+        check(sum, time, &n);
+    }
+
+    if (sum<100000) {
+        if (time > lessone && time <= one) {
+            res = (sum * 0.1);
             printf("-%d", res);
         }
-        if(time >= lessfour && time <= four){
-            res=(sum*0.02);
+        if (time >= lessfour && time <= four) {
+            res = (sum * 0.02);
             printf("%d", res);
         }
-        if(time >= lesseight && time <= eight){
-            res=(sum*0.06);
+        if (time >= lesseight && time <= eight) {
+            res = (sum * 0.06);
             printf("%d", res);
         }
-        if(time >= lesstwenty && time <= twenty){
-            res=(sum*0.12);
+        if (time >= lesstwenty && time <= twenty) {
+            res = (sum * 0.12);
             printf("%d", res);
         }
     }
     else{
-        if(time > lessone && time <= one){
-            res=(sum*0.1);
+        if (time > lessone && time <= one) {
+            res = (sum * 0.1);
             printf("-%d", res);
         }
-        if(time >= lessfour && time <= four){
-            res=(sum*0.03);
+        if (time >= lessfour && time <= four) {
+            res = (sum * 0.03);
             printf("%d", res);
         }
-        if(time >= lesseight && time <= eight){
-            res=(sum*0.08);
+        if (time >= lesseight && time <= eight) {
+            res = (sum * 0.08);
             printf("%d", res);
         }
-        if(time >= lesstwenty && time <= twenty){
-            res=(sum*0.15);
+        if (time >= lesstwenty && time <= twenty) {
+            res = (sum * 0.15);
             printf("%d", res);
         }
     }
-    
+
     return 0;
 }
