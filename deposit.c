@@ -9,6 +9,17 @@ void check(int sum, int time, int *n){
     }
 }
 
+enum Periods {
+    lessone = 0,
+    one = 30,
+    lessfour = 31,
+    four = 120,
+    lesseight = 121,
+    eight = 240,
+    lesstwenty = 241,
+    twenty = 365
+}
+
 int main(){
     int sum, n, time, res;
     
@@ -24,38 +35,38 @@ int main(){
     check(sum, time, &n);}
     
     if(sum<100000){
-        if(time > 0 && time <= 30){
-            res=sum-(sum*0.1);
+        if(time > lessone && time <= one){
+            res=(sum*0.1);
+            printf("-%d", res);
+        }
+        if(time >= lessfour && time <= four){
+            res=(sum*0.02);
             printf("%d", res);
         }
-        if(time >= 31 && time <= 120){
-            res=sum+(sum*0.02);
+        if(time >= lesseight && time <= eight){
+            res=(sum*0.06);
             printf("%d", res);
         }
-        if(time >= 121 && time <= 240){
-            res=sum+(sum*0.06);
-            printf("%d", res);
-        }
-        if(time >= 241 && time <= 365){
-            res=sum+(sum*0.12);
+        if(time >= lesstwenty && time <= twenty){
+            res=(sum*0.12);
             printf("%d", res);
         }
     }
     else{
-        if(time > 0 && time <= 30){
-            res=sum-(sum*0.1);
+        if(time > lessone && time <= one){
+            res=(sum*0.1);
+            printf("-%d", res);
+        }
+        if(time >= lessfour && time <= four){
+            res=(sum*0.03);
             printf("%d", res);
         }
-        if(time >= 31 && time <= 120){
-            res=sum+(sum*0.03);
+        if(time >= lesseight && time <= eight){
+            res=(sum*0.08);
             printf("%d", res);
         }
-        if(time >= 121 && time <= 240){
-            res=sum-(sum*0.08);
-            printf("%d", res);
-        }
-        if(time >= 241 && time <= 365){
-            res=sum-(sum*0.15);
+        if(time >= lesstwenty && time <= twenty){
+            res=(sum*0.15);
             printf("%d", res);
         }
     }
