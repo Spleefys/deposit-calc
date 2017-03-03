@@ -1,12 +1,12 @@
 #include <stdio.h>
 
 enum {
-    date 365,
-    depos 10000
-}
+    srok = 365,
+    depos = 10000
+};
 
 void check(int sum, int time, int *n){
-    if (time > date || sum < depos){
+    if (time > srok || sum < depos){
         *n = 0;
     }
     else{
@@ -23,7 +23,7 @@ enum Periods{
     eight = 240,
     lesstwenty = 241,
     twenty = 365
-}
+};
 
 int main(){
     int sum, n, time;
@@ -43,37 +43,37 @@ int main(){
     if (sum<100000) {
         if (time > lessone && time <= one) {
             res = (sum * 0.1);
-            printf("-%d", res);
+            printf("-%f", res);
         }
         if (time >= lessfour && time <= four) {
             res = (sum * 0.02);
-            printf("%d", res);
+            printf("%f", res);
         }
         if (time >= lesseight && time <= eight) {
             res = (sum * 0.06);
-            printf("%d", res);
+            printf("%f", res);
         }
         if (time >= lesstwenty && time <= twenty) {
             res = (sum * 0.12);
-            printf("%d", res);
+            printf("%f", res);
         }
     }
     else{
         if (time > lessone && time <= one) {
             res = (sum * 0.1);
-            printf("-%d", res);
+            printf("-%f", res);
         }
         if (time >= lessfour && time <= four) {
             res = (sum * 0.03);
-            printf("%d", res);
+            printf("%f", res);
         }
         if (time >= lesseight && time <= eight) {
             res = (sum * 0.08);
-            printf("%d", res);
+            printf("%f", res);
         }
         if (time >= lesstwenty && time <= twenty) {
             res = (sum * 0.15);
-            printf("%d", res);
+            printf("%f", res);
         }
     }
 
